@@ -19,7 +19,7 @@ from conan.tools.files import copy
 class ConanProject(ConanFile):
 
     name = "terminus_log"
-    version = "0.0.13"
+    version = "0.0.14"
 
     license = "Terminus Proprietary"
     author  = "Marvin Smith <marvin_smith1@me.com>"
@@ -31,14 +31,13 @@ class ConanProject(ConanFile):
 
     options = { "with_tests": [True, False],
                 "with_docs": [True, False],
-                "with_coverage": [True, False],
-                "use_external_boost": [True,False]
+                "with_coverage": [True, False]
     }
 
     default_options = { "with_tests": True,
                         "with_docs": True,
                         "with_coverage": False,
-                        "use_external_boost": False
+                        "boost/*:shared": True
     }
 
     settings = "os", "compiler", "build_type", "arch"
@@ -50,8 +49,7 @@ class ConanProject(ConanFile):
         self.tool_requires("terminus_cmake/1.0.8")
 
     def requirements(self):
-        if not self.options.use_external_boost:
-            self.requires("boost/1.89.0")
+        self.requires("boost/1.89.0")
 
     def _configure_cmake(self):
         cmake = CMake(self)
