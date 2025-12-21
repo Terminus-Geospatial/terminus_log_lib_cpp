@@ -19,11 +19,11 @@ from conan.tools.files import copy
 class ConanProject(ConanFile):
 
     name = "terminus_log"
-    version = "0.0.14"
+    version = "1.0.0"
 
     license = "Terminus Proprietary"
     author  = "Marvin Smith <marvin_smith1@me.com>"
-    url     = "https://bitbucket.org/msmith81886/terminus-log/src"
+    url     = "https://github.com/Terminus-Geospatial/terminus_log"
     description = "Standardized, extensible, and customizable logging"
     topics = ("terminus","log")
 
@@ -37,7 +37,7 @@ class ConanProject(ConanFile):
     default_options = { "with_tests": True,
                         "with_docs": True,
                         "with_coverage": False,
-                        "boost/*:shared": True
+                        "boost/*:shared": False
     }
 
     settings = "os", "compiler", "build_type", "arch"
