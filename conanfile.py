@@ -43,9 +43,11 @@ class ConanProject(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def build_requirements(self):
+        # Build Dependencies
         self.build_requires("cmake/4.1.2")
         self.test_requires("gtest/1.17.0")
 
+        # Tool Dependencies
         self.tool_requires("terminus_cmake/1.0.9")
 
     def requirements(self):
