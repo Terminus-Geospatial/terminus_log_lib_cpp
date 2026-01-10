@@ -29,15 +29,17 @@ class ConanProject(ConanFile):
 
     implements = ["auto_header_only"]
 
-    options = { "with_tests": [True, False],
+    options = { "shared": [True, False],
+                "with_tests": [True, False],
                 "with_docs": [True, False],
                 "with_coverage": [True, False]
     }
 
-    default_options = { "with_tests": True,
+    default_options = { "shared": True,
+                        "with_tests": True,
                         "with_docs": True,
                         "with_coverage": False,
-                        "boost/*:shared": False
+                        "boost/*:shared": True
     }
 
     settings = "os", "compiler", "build_type", "arch"
@@ -92,7 +94,7 @@ class ConanProject(ConanFile):
 
     def export_sources(self):
 
-        for p in [ "CMakeLists.txt", "include/*", "src/*", "test/*", "README.md" ]:
+        for p in [ "CMakeLists.txt", "library/include/*", "templates/*", "test/*", "README.md" ]:
             copy( self,
                   p,
                   self.recipe_folder,
