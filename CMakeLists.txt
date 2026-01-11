@@ -52,7 +52,7 @@ set( TERMINUS_LOG_PUBLIC_HEADERS
     terminus/log/impl/location.hpp
     terminus/log/logger.hpp
     terminus/log/utility.hpp
-    terminus/log/test/Stream_Interceptor.hpp
+    terminus/log/test/stream_interceptor.hpp
     terminus/log/configure.hpp
     terminus/log.hpp
 )

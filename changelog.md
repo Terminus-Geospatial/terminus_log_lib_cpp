@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Updated `terminus_cmake` dependency to `1.0.9`.
 * Updated package test.
 * Updating README.
+* Fixing files I never properly renamed.
 
 ## [1.0.0] - 2025-12-21
 
