@@ -20,13 +20,13 @@ from conan.tools.build import can_run
 class LogPackageTestConan( ConanFile ):
 
     name = "terminus_log_test"
-    version = "1.0.1"
+    version = "1.0.4"
     description = "Test for Terminus Log Package"
 
     settings = "os", "compiler", "build_type", "arch"
 
     def requirements(self):
-        self.requires("terminus_log/1.0.1")
+        self.requires("terminus_log/1.0.4")
 
     def _configure_cmake(self):
         cmake = CMake(self)
