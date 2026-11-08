@@ -26,7 +26,7 @@ class LogPackageTestConan( ConanFile ):
     settings = "os", "compiler", "build_type", "arch"
 
     def requirements(self):
-        self.requires("terminus_log/1.0.4")
+        self.requires("terminus_log/1.0.5")
 
     def _configure_cmake(self):
         cmake = CMake(self)
